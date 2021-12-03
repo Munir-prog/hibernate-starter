@@ -36,7 +36,7 @@ public class HibernateRunner {
         try (var sessionFactory = configuration.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             var user = User.builder()
-                    .username("ivan4@gmail.com")
+                    .username("ivan42@gmail.com")
                     .firstName("Ivan")
                     .lastname("Ivanov")
                     .info("""
@@ -50,8 +50,11 @@ public class HibernateRunner {
                     .build();
 
             session.beginTransaction();
-            session.save(user);
-            session.getTransaction().commit();
+//            session.update(user);
+//            session.saveOrUpdate(user);
+//            session.delete(user);
+            var user1 = session.get(User.class, "ivan@gmail.com");
+            session.getTransaction().commit()
 
             System.out.println("ok");
 
