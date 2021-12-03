@@ -1,7 +1,10 @@
 package com.mprog.entity;
 
 import com.mprog.converter.BirthdayConverter;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.*;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,6 +15,7 @@ import java.time.LocalDate;
 @Builder
 @Entity
 @Table(name = "users")
+@TypeDef(name = "jsonBin", typeClass = JsonBinaryType.class)
 public class User {
 
     @Id
@@ -24,6 +28,10 @@ public class User {
 //    @Convert(converter = BirthdayConverter.class)
     @Column(name = "birthday")
     private Birthday birthday;
+
+//    @Type(type = "jsonb")
+    @Type(type = "jsonBin")
+    private String info;
 
     @Enumerated(EnumType.STRING)
     private Role role;

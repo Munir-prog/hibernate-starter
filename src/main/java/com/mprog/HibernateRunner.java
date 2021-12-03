@@ -4,6 +4,7 @@ import com.mprog.converter.BirthdayConverter;
 import com.mprog.entity.Birthday;
 import com.mprog.entity.Role;
 import com.mprog.entity.User;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;
@@ -30,13 +31,20 @@ public class HibernateRunner {
 //        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
         configuration.addAttributeConverter(new BirthdayConverter());
 //        configuration.addAnnotatedClass(User.class);
+        configuration.registerTypeOverride(new JsonBinaryType());
         configuration.configure();
         try (var sessionFactory = configuration.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             var user = User.builder()
-                    .username("ivan1@gmail.com")
+                    .username("ivan4@gmail.com")
                     .firstName("Ivan")
                     .lastname("Ivanov")
+                    .info("""
+                            {
+                                "name": "Ivan",
+                                "id": 25
+                            }
+                            """)
                     .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                     .role(Role.ADMIN )
                     .build();
