@@ -1,5 +1,6 @@
 package com.mprog;
 
+import com.mprog.entity.Role;
 import com.mprog.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,7 +25,7 @@ public class HibernateRunner {
 //        );
 
         var configuration = new Configuration();
-        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
+//        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
         configuration.addAnnotatedClass(User.class);
         configuration.configure();
         try (var sessionFactory = configuration.buildSessionFactory();
@@ -35,6 +36,7 @@ public class HibernateRunner {
                     .lastname("Ivanov")
                     .birthday(LocalDate.of(2001, 11, 6))
                     .age(20)
+                    .role(Role.ADMIN )
                     .build();
 
             session.beginTransaction();
