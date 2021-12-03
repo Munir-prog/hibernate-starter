@@ -1,5 +1,6 @@
 package com.mprog.entity;
 
+import com.mprog.converter.BirthdayConverter;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,10 +21,9 @@ public class User {
 
     private String lastname;
 
+//    @Convert(converter = BirthdayConverter.class)
     @Column(name = "birthday")
-    private LocalDate birthday;
-
-    private Integer age;
+    private Birthday birthday;
 
     @Enumerated(EnumType.STRING)
     private Role role;
