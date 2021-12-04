@@ -1,9 +1,10 @@
-package com.mprog;
+package com.mprog.runner;
 
 import com.mprog.converter.BirthdayConverter;
 import com.mprog.entity.Birthday;
 import com.mprog.entity.Role;
 import com.mprog.entity.User;
+import com.mprog.util.HibernateUtil;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -27,13 +28,7 @@ public class HibernateRunner {
 //                "postgres"
 //        );
 
-        var configuration = new Configuration();
-//        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
-        configuration.addAttributeConverter(new BirthdayConverter());
-//        configuration.addAnnotatedClass(User.class);
-        configuration.registerTypeOverride(new JsonBinaryType());
-        configuration.configure();
-        try (var sessionFactory = configuration.buildSessionFactory();
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             var user = User.builder()
                     .username("ivan42@gmail.com")
