@@ -46,15 +46,25 @@ public class HibernateRunner {
                             }
                             """)
                     .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
-                    .role(Role.ADMIN )
+                    .role(Role.ADMIN)
                     .build();
 
             session.beginTransaction();
 //            session.update(user);
 //            session.saveOrUpdate(user);
 //            session.delete(user);
-            var user1 = session.get(User.class, "ivan@gmail.com");
-            session.getTransaction().commit()
+            var user1 = session.get(User.class, "ivan1@gmail.com");
+            var user2 = session.get(User.class, "ivan1@gmail.com");
+
+            session.evict(user1);
+            user2.setLastname("Petrov");
+            session.flush();
+
+            //            session.evict(user1);
+//            session.clear();
+//            session.close();
+
+            session.getTransaction().commit();
 
             System.out.println("ok");
 
