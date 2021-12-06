@@ -21,13 +21,8 @@ public class User {
     @Id
     private String username;
 
-    private String firstName;
-
-    private String lastname;
-
-//    @Convert(converter = BirthdayConverter.class)
-    @Column(name = "birthday")
-    private Birthday birthday;
+    @Embedded
+    private PersonalInfo personalInfo;
 
 //    @Type(type = "jsonb")
     @Type(type = "jsonBin")

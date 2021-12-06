@@ -1,6 +1,7 @@
 package com.mprog.runner;
 
 import com.mprog.converter.BirthdayConverter;
+import com.mprog.entity.PersonalInfo;
 import com.mprog.entity.User;
 import com.mprog.util.HibernateUtil;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
@@ -19,8 +20,10 @@ public class HibernateRunner2 {
 
         var user = User.builder()
                 .username("ivan@gmail.com")
-                .firstName("Ivan")
-                .lastname("Ivanov")
+                .personalInfo(PersonalInfo.builder()
+                        .firstName("Ivan")
+                        .lastname("Ivanov")
+                        .build())
                 .build();
 
         log.info("User entity is in transient state, object: {}", user);
