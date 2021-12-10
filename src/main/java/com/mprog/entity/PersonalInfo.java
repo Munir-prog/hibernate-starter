@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serial;
+import java.io.Serializable;
 
 
 @Data
@@ -14,13 +16,16 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @Builder
 @Embeddable
-public class PersonalInfo {
+public class PersonalInfo implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private String firstName;
 
     private String lastname;
 
     //    @Convert(converter = BirthdayConverter.class)
-    @Column(name = "birthday")
+//    @Column(name = "birthday")
     private Birthday birthday;
 }

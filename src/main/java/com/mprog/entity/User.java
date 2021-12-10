@@ -18,13 +18,30 @@ import java.time.LocalDate;
 @TypeDef(name = "jsonBin", typeClass = JsonBinaryType.class)
 public class User {
 
-    @Id
-    private String username;
 
-    @Embedded
+//    @Id
+//    @GeneratedValue(generator = "user_gen", strategy = GenerationType.TABLE)
+//    @TableGenerator(name = "user_gen",
+//            table = "all_seq",
+//            allocationSize = 1,
+//            pkColumnName = "table_name",
+//            valueColumnName = "pk_value"
+//    )
+////    @GeneratedValue(generator = "user_gen", strategy = GenerationType.SEQUENCE)
+////    @SequenceGenerator(name = "user_gen", sequenceName = "users_id_seq", allocationSize = 1)
+//    private Long id;
+
+
+
+    @EmbeddedId
+//    @Embedded
+//    @AttributeOverride(name = "birthDate", column = @Column(name = "birth_date"))
     private PersonalInfo personalInfo;
 
-//    @Type(type = "jsonb")
+    @Column(unique = true)
+    private String username;
+
+    //    @Type(type = "jsonb")
     @Type(type = "jsonBin")
     private String info;
 

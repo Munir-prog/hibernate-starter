@@ -29,3 +29,256 @@ https://vladmihalcea.com/hypersistence-optimizer/
 [2021-12-06 20:37:39,871] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
 [2021-12-06 20:37:43,159] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 [2021-12-06 20:37:43,977] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 20:49:23,293] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-06 20:49:23,610] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-06 20:49:24,368] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-06 20:49:24,565] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-06 20:49:24,581] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 20:49:24,583] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-06 20:49:24,585] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-06 20:49:24,596] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-06 20:49:24,965] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-06 20:49:25,812] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-06 20:49:25,976] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 20:56:31,959] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-06 20:56:32,220] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-06 20:56:32,729] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-06 20:56:32,890] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-06 20:56:32,897] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 20:56:32,898] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-06 20:56:32,899] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-06 20:56:32,902] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-06 20:56:33,017] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-06 20:56:33,712] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-06 20:56:33,870] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 21:04:14,267] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-06 21:04:14,697] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-06 21:04:15,716] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-06 21:04:15,921] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-06 21:04:15,930] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 21:04:15,931] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-06 21:04:15,934] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-06 21:04:15,942] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-06 21:04:16,190] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-06 21:04:16,862] INFO [org.hibernate.id.enhanced.TableGenerator: 499] HHH000398: Explicit segment value for id generator [all_seq.table_name] suggested; using default [users]
+[2021-12-06 21:04:17,625] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-06 21:04:19,009] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 21:06:43,700] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-06 21:06:44,118] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-06 21:06:45,065] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-06 21:06:45,277] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-06 21:06:45,288] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-06 21:06:45,289] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-06 21:06:45,291] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-06 21:06:45,301] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-06 21:06:45,499] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-06 21:06:45,893] INFO [org.hibernate.id.enhanced.TableGenerator: 499] HHH000398: Explicit segment value for id generator [all_seq.table_name] suggested; using default [users]
+[2021-12-06 21:06:46,625] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-06 21:06:46,898] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:12:57,711] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-10 20:12:58,193] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-10 20:12:59,257] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-10 20:13:00,373] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-10 20:13:00,434] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:13:00,435] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-10 20:13:00,435] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-10 20:13:00,458] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-10 20:13:01,519] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-10 20:13:02,457] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-10 20:14:29,627] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-10 20:14:29,925] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-10 20:14:30,630] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-10 20:14:30,817] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-10 20:14:30,824] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:14:30,825] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-10 20:14:30,826] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-10 20:14:30,832] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-10 20:14:31,044] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-10 20:14:31,877] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-10 20:16:43,288] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:17:25,355] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-10 20:17:25,620] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-10 20:17:26,131] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-10 20:17:26,305] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-10 20:17:26,330] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:17:26,331] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-10 20:17:26,331] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-10 20:17:26,336] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-10 20:17:26,498] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-10 20:17:27,468] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-10 20:17:35,650] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 23505
+[2021-12-10 20:17:35,651] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: duplicate key value violates unique constraint "users_username_key"
+  Detail: Key (username)=(petya1@gmail.com) already exists.
+[2021-12-10 20:17:35,663] INFO [org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl: 208] HHH000010: On release of batch it still contained JDBC statements
+[2021-12-10 20:17:47,375] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:18:05,952] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.1.Final
+[2021-12-10 20:18:06,197] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2021-12-10 20:18:06,698] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-12-10 20:18:06,837] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2021-12-10 20:18:06,844] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2021-12-10 20:18:06,845] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2021-12-10 20:18:06,845] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2021-12-10 20:18:06,850] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2021-12-10 20:18:06,976] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2021-12-10 20:18:07,780] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-12-10 20:21:54,568] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]

@@ -1,6 +1,7 @@
 package com.mprog.runner;
 
 import com.mprog.converter.BirthdayConverter;
+import com.mprog.entity.Birthday;
 import com.mprog.entity.PersonalInfo;
 import com.mprog.entity.User;
 import com.mprog.util.HibernateUtil;
@@ -12,6 +13,8 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
+
 @Slf4j
 public class HibernateRunner2 {
 
@@ -19,10 +22,11 @@ public class HibernateRunner2 {
     public static void main(String[] args) {
 
         var user = User.builder()
-                .username("ivan@gmail.com")
+                .username("petya21@gmail.com")
                 .personalInfo(PersonalInfo.builder()
-                        .firstName("Ivan")
-                        .lastname("Ivanov")
+                        .firstName("Test")
+                        .lastname("Testov")
+                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                         .build())
                 .build();
 
@@ -39,15 +43,21 @@ public class HibernateRunner2 {
             }
 
             log.warn("User is in detached state: {}, session: {}", user, session1);
-//            try (var session2 = sessionFactory.openSession()) {
-//                session2.beginTransaction();
-//
+            try (var session2 = sessionFactory.openSession()) {
+                var personalInfo = PersonalInfo.builder()
+                        .lastname("Testov")
+                        .firstName("Test")
+                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
+                        .build();
 //                user.setLastname("Petrov");
-//                //                session2.delete(user);
+                //                session2.delete(user);
 //                session2.refresh(user);
 //                var merge = session2.merge(user);
-//                session2.getTransaction().commit();
-//            }
+
+                var user2 = session2.get(User.class, personalInfo);
+                session2.getTransaction().commit();
+
+            }
         } catch (Exception exception) {
             log.error("Exception occurred", exception);
             throw exception;
