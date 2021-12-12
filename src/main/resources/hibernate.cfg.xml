@@ -14,5 +14,6 @@
         <property name="format_sql">true</property>
 
         <mapping class="com.mprog.entity.User"/>
+        <mapping class="com.mprog.entity.Company"/>
     </session-factory>
 </hibernate-configuration>

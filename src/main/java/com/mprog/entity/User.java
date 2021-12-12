@@ -1,17 +1,16 @@
 package com.mprog.entity;
 
-import com.mprog.converter.BirthdayConverter;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.*;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "company")
 @Builder
 @Entity
 @Table(name = "users")
@@ -27,13 +26,15 @@ public class User {
 //            pkColumnName = "table_name",
 //            valueColumnName = "pk_value"
 //    )
-////    @GeneratedValue(generator = "user_gen", strategy = GenerationType.SEQUENCE)
+//    @GeneratedValue(generator = "user_gen", strategy = GenerationType.SEQUENCE)
 ////    @SequenceGenerator(name = "user_gen", sequenceName = "users_id_seq", allocationSize = 1)
-//    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
 
 
-    @EmbeddedId
+//    @EmbeddedId
 //    @Embedded
 //    @AttributeOverride(name = "birthDate", column = @Column(name = "birth_date"))
     private PersonalInfo personalInfo;
@@ -51,6 +52,11 @@ public class User {
 
 //    @Transient
 //    private String test;
+
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id")
+    private Company company;
 
 }
 
