@@ -39,6 +39,9 @@ public class HibernateRunner3 {
 //            session.save(user);
 
             var user1 = session.get(User.class, 1L);
+            var company = user1.getCompany();
+            var id = company.getId();
+            var name = company.getName();
 
             session.getTransaction().commit();
         }
