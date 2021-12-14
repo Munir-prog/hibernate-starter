@@ -11,13 +11,13 @@ public class HibernateRunner3 {
     public static void main(String[] args) throws SQLException {
 
         var google = Company.builder()
-                .name("Google")
+                .name("Amazon")
                 .build();
 
         var user = User.builder()
-                .username("ivan12@gmail.com")
+                .username("ivan13@gmail.com")
                 .personalInfo(PersonalInfo.builder()
-                        .firstName("Vanya")
+                        .firstName("Ksenia")
                         .lastname("Ivanov")
                         .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                         .build())
@@ -36,12 +36,13 @@ public class HibernateRunner3 {
             session.beginTransaction();
 
 //            session.save(google);
-//            session.save(user);
+            session.save(user);
 
-            var user1 = session.get(User.class, 1L);
-            var company = user1.getCompany();
-            var id = company.getId();
-            var name = company.getName();
+//            var user1 = session.get(User.class, 1L);
+////            var company = user1.getCompany();
+////            var id = company.getId();
+////            var name = company.getName();
+//            session.evict(user1);
 
             session.getTransaction().commit();
         }
