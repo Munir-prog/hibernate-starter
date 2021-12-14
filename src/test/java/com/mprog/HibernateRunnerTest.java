@@ -1,7 +1,10 @@
 package com.mprog;
 
-import com.mprog.entity.Birthday;
+import com.mprog.entity.Company;
 import com.mprog.entity.User;
+import com.mprog.util.HibernateUtil;
+import lombok.Cleanup;
+import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.Column;
@@ -25,6 +28,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class HibernateRunnerTest {
 
     @Test
+    void oneToMany() {
+        @Cleanup var sessionFactory = HibernateUtil.buildSessionFactory();
+        @Cleanup Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+        var company = session.get(Company.class, 1);
+        System.out.println("");
+        session.getTransaction().commit();
+
+    }
+
+    @Test
     void checkGetReflectionApi() throws SQLException, NoSuchMethodException, NoSuchFieldException, InvocationTargetException, InstantiationException, IllegalAccessException {
         PreparedStatement preparedStatement = null;
         var resultSet = preparedStatement.executeQuery();
@@ -44,9 +59,9 @@ class HibernateRunnerTest {
     void checkReflectionApi() throws SQLException, IllegalAccessException {
         var user = User.builder()
                 .username("ivan@gmail.com")
-                .firstName("Ivan")
-                .lastname("Ivanov")
-                .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
+//                .firstName("Ivan")
+//                .lastname("Ivanov")
+//                .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                 .build();
 
         String sql = """
@@ -60,7 +75,7 @@ class HibernateRunnerTest {
         var tableName = ofNullable(user.getClass().getAnnotation(Table.class))
                 .map(tableAnnotation -> tableAnnotation.schema() + "." + tableAnnotation.name())
                 .orElse(user.getClass().getName());
-        if (tableName.startsWith(".")){
+        if (tableName.startsWith(".")) {
             tableName = tableName.substring(1);
         }
 

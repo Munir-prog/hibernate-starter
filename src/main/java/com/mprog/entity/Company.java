@@ -2,15 +2,16 @@ package com.mprog.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "users")
+@EqualsAndHashCode(exclude = "users")
 @Builder
 public class Company {
 
@@ -19,4 +20,8 @@ public class Company {
     private Integer id;
 
     private String name;
+
+    @OneToMany(mappedBy = "company")
+//    @JoinColumn(name = "company_id")
+    private Set<User> users;
 }

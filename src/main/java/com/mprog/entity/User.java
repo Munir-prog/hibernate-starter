@@ -56,8 +56,8 @@ public class User {
 //    private String test;
 
 
-//    @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = {DETACH, PERSIST})
     @ManyToOne(fetch = FetchType.EAGER, cascade = {ALL})
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = {ALL})
     @JoinColumn(name = "company_id")
     private Company company;
 
