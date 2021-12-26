@@ -12,6 +12,7 @@ import static javax.persistence.CascadeType.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "username")
 @ToString(exclude = "company")
 @Builder
 @Entity
