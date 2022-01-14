@@ -1,6 +1,8 @@
 package com.mprog;
 
+import com.mprog.entity.Chat;
 import com.mprog.entity.Company;
+import com.mprog.entity.Profile;
 import com.mprog.entity.User;
 import com.mprog.util.HibernateUtil;
 import lombok.Cleanup;
@@ -30,7 +32,52 @@ class HibernateRunnerTest {
 
 
     @Test
-    void checkOrphanRemoval(){
+    void checkManyToMany(){
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+
+            var user = session.get(User.class, 7L);
+            user.getChats().clear();
+//            Chat mdev = Chat.builder()
+//                    .name("mdev")
+//                    .build();
+//
+//            user.addChat(mdev);
+//            session.save(mdev);
+
+            session.getTransaction().commit();
+        }
+    }
+    @Test
+    void checkOneToOne() {
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+
+            var user = User.builder()
+                    .username("testUser1@mail.ru")
+                    .build();
+
+            var profile = Profile.builder()
+                    .language("ru")
+                    .street("udarnikov, 29")
+                    .build();
+
+            profile.setUser(user);
+
+            session.save(user);
+//            profile.setUser(user);
+//            session.save(profile);
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Test
+    void checkOrphanRemoval() {
 //        Company company = null;
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
@@ -41,8 +88,9 @@ class HibernateRunnerTest {
             session.getTransaction().commit();
         }
     }
+
     @Test
-    void checkLazyInitialization(){
+    void checkLazyInitialization() {
         Company company = null;
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
