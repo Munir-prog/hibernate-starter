@@ -50,3 +50,11 @@ CREATE TABLE users_chat (
 );
 
 DROP TABLE users_chat;
+
+
+CREATE TABLE company_locale (
+    company_id INT NOT NULL REFERENCES company (id),
+    lang CHAR(2) NOT NULL ,
+    description VARCHAR(128) NOT NULL ,
+    PRIMARY KEY (company_id, lang)
+)

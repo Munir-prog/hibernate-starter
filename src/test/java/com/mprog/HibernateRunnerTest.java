@@ -30,6 +30,20 @@ class HibernateRunnerTest {
 
 
     @Test
+    void localeInfo(){
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = session.get(Company.class, 1);
+//            company.getLocales().add(LocaleInfo.of("ru", "Описание на русском"));
+//            company.getLocales().add(LocaleInfo.of("en", "English description"));
+
+            company.getUsers().forEach(System.out::println);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
     void checkManyToMany(){
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
