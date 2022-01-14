@@ -7,7 +7,9 @@ import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static javax.persistence.CascadeType.*;
@@ -16,7 +18,7 @@ import static javax.persistence.CascadeType.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "username")
-@ToString(exclude = {"company", "profile", "chats"})
+@ToString(exclude = {"company", "profile", "userChats"})
 @Builder
 @Entity
 @Table(name = "users")
@@ -75,18 +77,8 @@ public class User {
 
 
     @Builder.Default
-    @ManyToMany
-    @JoinTable(
-            name = "users_chat",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "chat_id")
-    )
-    private Set<Chat> chats = new HashSet<>();
-
-    public void addChat(Chat chat){
-        chats.add(chat);
-        chat.getUsers().add(this);
-    }
+    @OneToMany(mappedBy = "user")
+    private List<UserChat> userChats = new ArrayList<>();
 
 }
 

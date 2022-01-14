@@ -1,9 +1,6 @@
 package com.mprog;
 
-import com.mprog.entity.Chat;
-import com.mprog.entity.Company;
-import com.mprog.entity.Profile;
-import com.mprog.entity.User;
+import com.mprog.entity.*;
 import com.mprog.util.HibernateUtil;
 import lombok.Cleanup;
 import org.hibernate.Session;
@@ -18,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
@@ -39,7 +37,19 @@ class HibernateRunnerTest {
 
 
             var user = session.get(User.class, 7L);
-            user.getChats().clear();
+            Chat chat = session.get(Chat.class, 1L);
+
+
+            UserChat userChat = UserChat.builder()
+                    .createdAt(Instant.now())
+                    .created_by(user.getUsername())
+                    .build();
+
+            userChat.setUser(user);
+            userChat.setChat(chat);
+
+            session.save(userChat);
+            //            user.getChats().clear();
 //            Chat mdev = Chat.builder()
 //                    .name("mdev")
 //                    .build();
