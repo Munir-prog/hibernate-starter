@@ -38,12 +38,12 @@ public class HibernateRunner {
                             .lastname("Ivanov")
                             .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                             .build())
-                    .info("""
-                            {
-                                "name": "Ivan",
-                                "id": 25
-                            }
-                            """)
+//                    .info("""
+//                            {
+//                                "name": "Ivan",
+//                                "id": 25
+//                            }
+//                            """)
                     .role(Role.ADMIN)
                     .build();
 

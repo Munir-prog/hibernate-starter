@@ -22,12 +22,12 @@ public class HibernateRunner3 {
                         .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                         .build())
                 .company(google)
-                .info("""
-                            {
-                                "name": "Ivan",
-                                "id": 25
-                            }
-                            """)
+//                .info("""
+//                            {
+//                                "name": "Ivan",
+//                                "id": 25
+//                            }
+//                            """)
                 .role(Role.ADMIN)
                 .build();
 

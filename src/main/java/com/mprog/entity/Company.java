@@ -1,12 +1,10 @@
 package com.mprog.entity;
 
 import lombok.*;
+import org.hibernate.annotations.SortNatural;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Data
@@ -18,7 +16,7 @@ import java.util.Set;
 public class Company {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(nullable = false, unique = true)
@@ -30,8 +28,10 @@ public class Company {
 //    @JoinColumn(name = "company_id")
 //    @org.hibernate.annotations.OrderBy(clause = "username DESC, lastname ASC")
 //    @OrderBy("username DESC, personalInfo.lastname ASC")
-    @OrderColumn
-    private Set<User> users = new HashSet<>();
+//    @OrderColumn
+    @MapKey(name = "username")
+    @SortNatural
+    private Map<String, User> users = new TreeMap<>();
 
 
     @Builder.Default
@@ -40,11 +40,13 @@ public class Company {
             name = "company_locale",
             joinColumns = @JoinColumn(name = "company_id")
     )
-    private List<LocaleInfo> locales = new ArrayList<>();
+    @MapKeyColumn(name = "lang")
+    @Column(name = "description")
+    private Map<String, String> locales = new HashMap<>();
 
 
     public void addUser(User user) {
-        users.add(user);
+        users.put(user.getUsername(), user);
         user.setCompany(this);
     }
 }

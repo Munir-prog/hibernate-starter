@@ -30,16 +30,33 @@ class HibernateRunnerTest {
 
 
     @Test
+    void checkH2(){
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = Company.builder()
+                    .name("Google")
+                    .build();
+            session.save(company);
+
+            System.out.println(company);
+            session.getTransaction().commit();
+        }
+    }
+
+    @Test
     void localeInfo(){
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
             Company company = session.get(Company.class, 1);
-//            company.getLocales().add(LocaleInfo.of("ru", "Описание на русском"));
-//            company.getLocales().add(LocaleInfo.of("en", "English description"));
-
-            company.getUsers().forEach(System.out::println);
+//            company.getLocales().put("sp", "Spanish на русском");
+//            company.getLocales().put("us", "American description");
+//
+//            company.getLocales().forEach((k, v) -> System.out.println(k + " - " + v));
+//            company.getUsers().forEach((k, v) -> System.out.println(v));
             session.getTransaction().commit();
         }
     }
@@ -108,7 +125,7 @@ class HibernateRunnerTest {
             session.beginTransaction();
 
             var company = session.get(Company.class, 1);
-            company.getUsers().removeIf(user -> user.getId() == 3L);
+//            company.getUsers().removeIf(user -> user.getId() == 3L);
             session.getTransaction().commit();
         }
     }

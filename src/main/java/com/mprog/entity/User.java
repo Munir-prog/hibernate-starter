@@ -22,7 +22,7 @@ import static javax.persistence.CascadeType.*;
 @Builder
 @Entity
 @Table(name = "users")
-@TypeDef(name = "jsonBin", typeClass = JsonBinaryType.class)
+//@TypeDef(name = "jsonBin", typeClass = JsonBinaryType.class)
 public class User {
 
 
@@ -51,8 +51,8 @@ public class User {
     private String username;
 
     //    @Type(type = "jsonb")
-    @Type(type = "jsonBin")
-    private String info;
+//    @Type(type = "jsonBin")
+//    private String info;
 
     @Enumerated(EnumType.STRING)
     private Role role;
