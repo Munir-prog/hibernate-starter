@@ -1,6 +1,7 @@
 package com.mprog;
 
 import com.mprog.entity.*;
+import com.mprog.util.HibernateTestUtil;
 import com.mprog.util.HibernateUtil;
 import lombok.Cleanup;
 import org.hibernate.Session;
@@ -31,11 +32,11 @@ class HibernateRunnerTest {
 
     @Test
     void checkH2(){
-        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+        try (var sessionFactory = HibernateTestUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
-            Company company = Company.builder()
+             Company company = Company.builder()
                     .name("Google")
                     .build();
             session.save(company);

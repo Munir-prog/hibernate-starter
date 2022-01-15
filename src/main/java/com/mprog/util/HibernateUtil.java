@@ -12,13 +12,18 @@ public class HibernateUtil {
 
     public static SessionFactory buildSessionFactory(){
 
+        var configuration = buildConfiguration();
+        configuration.configure();
+
+        return configuration.buildSessionFactory();
+    }
+
+    public static Configuration buildConfiguration(){
         var configuration = new Configuration();
 //        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
         configuration.addAttributeConverter(new BirthdayConverter());
 //        configuration.addAnnotatedClass(User.class);
         configuration.registerTypeOverride(new JsonBinaryType());
-        configuration.configure();
-
-        return configuration.buildSessionFactory();
+        return configuration;
     }
 }
