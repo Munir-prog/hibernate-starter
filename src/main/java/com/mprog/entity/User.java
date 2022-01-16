@@ -40,7 +40,7 @@ public abstract class User implements BaseEntity<Long> {
 ////    @SequenceGenerator(name = "user_gen", sequenceName = "users_id_seq", allocationSize = 1)
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 

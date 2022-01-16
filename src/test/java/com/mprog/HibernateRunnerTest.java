@@ -30,7 +30,48 @@ import static org.junit.jupiter.api.Assertions.*;
 class HibernateRunnerTest {
 
     @Test
-    void
+    void checkSingleTableInheritance(){
+        //        + and - of table per class
+//      -
+//      one table with all fields
+//      для общих полей нельзя задать конмтрейнты
+//        +
+//        запрос только на одну таблицу(без юнионов)
+//      можно юзать IDENTITY
+        try (var sessionFactory = HibernateTestUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = Company.builder()
+                    .name("Google")
+                    .build();
+
+            session.save(company);
+
+            Programmer programmer = Programmer.builder()
+                    .username("testivan@gmail.com")
+                    .language(Language.C)
+                    .company(company)
+                    .build();
+
+            session.save(programmer);
+
+            Manager manager = Manager.builder()
+                    .username("test5@mail.ru")
+                    .projectName("rpl")
+                    .company(company)
+                    .build();
+
+            session.save(manager);
+
+            session.flush();
+
+            var programmer1 = session.get(Programmer.class, 1L);
+            var manager1 = session.get(User.class, 2L);
+            System.out.println(company);
+            session.getTransaction().commit();
+        }
+    }
 
     @Test
     void checkH2AndTablePerClass(){
