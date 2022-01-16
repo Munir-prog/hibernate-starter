@@ -31,25 +31,25 @@ public class HibernateRunner {
 
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
-            var user = User.builder()
-                    .username("ivan42@gmail.com")
-                    .personalInfo(PersonalInfo.builder()
-                            .firstName("Ivan")
-                            .lastname("Ivanov")
-                            .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
-                            .build())
-//                    .info("""
-//                            {
-//                                "name": "Ivan",
-//                                "id": 25
-//                            }
-//                            """)
-                    .role(Role.ADMIN)
-                    .build();
+//            var user = User.builder()
+//                    .username("ivan42@gmail.com")
+//                    .personalInfo(PersonalInfo.builder()
+//                            .firstName("Ivan")
+//                            .lastname("Ivanov")
+//                            .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
+//                            .build())
+////                    .info("""
+////                            {
+////                                "name": "Ivan",
+////                                "id": 25
+////                            }
+////                            """)
+//                    .role(Role.ADMIN)
+//                    .build();
 
             session.beginTransaction();
 //            session.update(user);
-            session.saveOrUpdate(user);
+//            session.saveOrUpdate(user);
 //            session.delete(user);
 //            var user1 = session.get(User.class, "ivan1@gmail.com");
 //            var user2 = session.get(User.class, "ivan1@gmail.com");

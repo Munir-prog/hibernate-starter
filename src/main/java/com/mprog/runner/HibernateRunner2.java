@@ -21,28 +21,28 @@ public class HibernateRunner2 {
 //    private static final Logger log = LoggerFactory.getLogger(HibernateRunner2.class);
     public static void main(String[] args) {
 
-        var user = User.builder()
-                .username("petya21@gmail.com")
-                .personalInfo(PersonalInfo.builder()
-                        .firstName("Test")
-                        .lastname("Testov")
-                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
-                        .build())
-                .build();
+//        var user = User.builder()
+//                .username("petya21@gmail.com")
+//                .personalInfo(PersonalInfo.builder()
+//                        .firstName("Test")
+//                        .lastname("Testov")
+//                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
+//                        .build())
+//                .build();
 
-        log.info("User entity is in transient state, object: {}", user);
+//        log.info("User entity is in transient state, object: {}", user);
         try (var sessionFactory = HibernateUtil.buildSessionFactory()){
             var session1 = sessionFactory.openSession();
             try (session1) {
                 var transaction = session1.beginTransaction();
                 log.trace("Transaction  is begun, {}", transaction);
 
-                session1.saveOrUpdate(user);
-                log.trace("User is in persistent state: {}, session {}", user, session1);
+//                session1.saveOrUpdate(user);
+//                log.trace("User is in persistent state: {}, session {}", user, session1);
                 session1.getTransaction().commit();
             }
 
-            log.warn("User is in detached state: {}, session: {}", user, session1);
+//            log.warn("User is in detached state: {}, session: {}", user, session1);
             try (var session2 = sessionFactory.openSession()) {
                 var personalInfo = PersonalInfo.builder()
                         .lastname("Testov")

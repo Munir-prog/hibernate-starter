@@ -19,11 +19,13 @@ import static javax.persistence.CascadeType.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "username")
 @ToString(exclude = {"company", "profile", "userChats"})
-@Builder
+//@Builder
 @Entity
 @Table(name = "users")
 @TypeDef(name = "jsonBin", typeClass = JsonBinaryType.class)
-public class User {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
+public abstract class User implements BaseEntity<Long> {
 
 
 //    @Id
@@ -36,13 +38,13 @@ public class User {
 //    )
 //    @GeneratedValue(generator = "user_gen", strategy = GenerationType.SEQUENCE)
 ////    @SequenceGenerator(name = "user_gen", sequenceName = "users_id_seq", allocationSize = 1)
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
 
-
-//    @EmbeddedId
+    //    @EmbeddedId
 //    @Embedded
 //    @AttributeOverride(name = "birthDate", column = @Column(name = "birth_date"))
     private PersonalInfo personalInfo;
@@ -70,13 +72,13 @@ public class User {
     @OneToOne(
             mappedBy = "user",
             cascade = ALL,
-            fetch = FetchType.LAZY,
-            optional = false
+            fetch = FetchType.LAZY
+//            optional = false
     )
     private Profile profile;
 
 
-    @Builder.Default
+    //    @Builder.Default
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 

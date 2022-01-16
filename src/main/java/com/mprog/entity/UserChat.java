@@ -14,7 +14,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 @Table(name = "users_chat")
-public class UserChat {
+public class UserChat extends AuditableEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +29,6 @@ public class UserChat {
     @JoinColumn(name = "chat_id") // not need when variable name is chat
     private Chat chat;
 
-
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "created_by")
-    private String created_by;
 
 
     public void setUser(User user){

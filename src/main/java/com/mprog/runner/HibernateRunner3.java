@@ -14,29 +14,29 @@ public class HibernateRunner3 {
                 .name("Amazon")
                 .build();
 
-        var user = User.builder()
-                .username("ivan13@gmail.com")
-                .personalInfo(PersonalInfo.builder()
-                        .firstName("Ksenia")
-                        .lastname("Ivanov")
-                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
-                        .build())
-                .company(google)
+//        var user = User.builder()
+//                .username("ivan13@gmail.com")
+//                .personalInfo(PersonalInfo.builder()
+//                        .firstName("Ksenia")
+//                        .lastname("Ivanov")
+//                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
+//                        .build())
+//                .company(google)
 //                .info("""
 //                            {
 //                                "name": "Ivan",
 //                                "id": 25
 //                            }
 //                            """)
-                .role(Role.ADMIN)
-                .build();
+//                .role(Role.ADMIN)
+//                .build();
 
         try (var sessionFactory = HibernateUtil.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
 //            session.save(google);
-            session.save(user);
+//            session.save(user);
 
 //            var user1 = session.get(User.class, 1L);
 ////            var company = user1.getCompany();
