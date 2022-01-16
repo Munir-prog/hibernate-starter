@@ -23,8 +23,7 @@ import static javax.persistence.CascadeType.*;
 @Entity
 @Table(name = "users")
 @TypeDef(name = "jsonBin", typeClass = JsonBinaryType.class)
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User implements BaseEntity<Long> {
 
 

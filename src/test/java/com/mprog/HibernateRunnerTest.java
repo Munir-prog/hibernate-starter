@@ -30,8 +30,52 @@ import static org.junit.jupiter.api.Assertions.*;
 class HibernateRunnerTest {
 
     @Test
+    void checkJoinedTableInheritance(){
+        //        + and - of joined table
+//        +
+//        данные нормализованы(общие поля в одной таблице, а отдельные поле в разных таблицах
+//        -
+//        ухудшение при вставке, делит, и обновления( используется сразу две таблицы)
+
+
+        try (var sessionFactory = HibernateTestUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = Company.builder()
+                    .name("Google")
+                    .build();
+
+            session.save(company);
+
+            Programmer programmer = Programmer.builder()
+                    .username("testivan@gmail.com")
+                    .language(Language.C)
+                    .company(company)
+                    .build();
+
+            session.save(programmer);
+
+            Manager manager = Manager.builder()
+                    .username("test5@mail.ru")
+                    .projectName("rpl")
+                    .company(company)
+                    .build();
+
+            session.save(manager);
+
+            session.flush();
+
+            var programmer1 = session.get(Programmer.class, 1L);
+            var manager1 = session.get(User.class, 2L);
+            System.out.println(company);
+            session.getTransaction().commit();
+        }
+    }
+
+    @Test
     void checkSingleTableInheritance(){
-        //        + and - of table per class
+        //        + and - of single table
 //      -
 //      one table with all fields
 //      для общих полей нельзя задать конмтрейнты
