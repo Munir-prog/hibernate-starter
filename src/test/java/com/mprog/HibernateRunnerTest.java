@@ -5,6 +5,7 @@ import com.mprog.util.HibernateTestUtil;
 import com.mprog.util.HibernateUtil;
 import lombok.Cleanup;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.Column;
@@ -19,6 +20,7 @@ import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -29,8 +31,40 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HibernateRunnerTest {
 
+
     @Test
-    void checkJoinedTableInheritance(){
+    void checkHQL() {
+        try (var sessionFactory = HibernateTestUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+
+            var name = "Ivan";
+
+//            var query = session.createQuery("select u from User u where u.personalInfo.firstName = 'Ivan'", User.class);
+//            var result = query.list();
+            var list = session
+                    .createQuery(
+                            "select u from User u" +
+//                                    " join u.company c" +
+                                    " where u.personalInfo.firstName = :firstName and u.company.name = :companyName" +
+                                    " order by u.personalInfo.lastname desc"
+                            , User.class
+                    )
+                    .setParameter("firstName", name)
+                    .setParameter("companyName", "Google")
+                    .list();
+
+            
+            System.out.println();
+
+            session.getTransaction().commit();
+        }
+
+    }
+
+    @Test
+    void checkJoinedTableInheritance() {
         //        + and - of joined table
 //        +
 //        данные нормализованы(общие поля в одной таблице, а отдельные поле в разных таблицах
