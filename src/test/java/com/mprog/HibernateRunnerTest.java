@@ -5,10 +5,13 @@ import com.mprog.util.HibernateTestUtil;
 import com.mprog.util.HibernateUtil;
 import lombok.Cleanup;
 import org.hibernate.Session;
+import org.hibernate.jpa.QueryHints;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.Column;
+import javax.persistence.FlushModeType;
 import javax.persistence.Table;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -44,18 +47,24 @@ class HibernateRunnerTest {
 //            var query = session.createQuery("select u from User u where u.personalInfo.firstName = 'Ivan'", User.class);
 //            var result = query.list();
             var list = session
-                    .createQuery(
-                            "select u from User u" +
-//                                    " join u.company c" +
-                                    " where u.personalInfo.firstName = :firstName and u.company.name = :companyName" +
-                                    " order by u.personalInfo.lastname desc"
+                    .createNamedQuery("findUserByName"
+//                            "select u from User u" +
+////                                    " join u.company c" +
+//                                    " where u.personalInfo.firstName = :firstName and u.company.name = :companyName" +
+//                                    " order by u.personalInfo.lastname desc"
                             , User.class
                     )
                     .setParameter("firstName", name)
                     .setParameter("companyName", "Google")
+                    .setFlushMode(FlushModeType.AUTO)
+                    .setHint(QueryHints.HINT_FLUSH_MODE, "auto")
                     .list();
 
-            
+
+
+            int i = session.createQuery("update User u set u.role = 'ADMIN'").executeUpdate();
+
+            NativeQuery nativeQuery = session.createNativeQuery("select * from users where username = 'tete'");
             System.out.println();
 
             session.getTransaction().commit();
@@ -82,25 +91,25 @@ class HibernateRunnerTest {
 
             session.save(company);
 
-            Programmer programmer = Programmer.builder()
-                    .username("testivan@gmail.com")
-                    .language(Language.C)
-                    .company(company)
-                    .build();
-
-            session.save(programmer);
-
-            Manager manager = Manager.builder()
-                    .username("test5@mail.ru")
-                    .projectName("rpl")
-                    .company(company)
-                    .build();
-
-            session.save(manager);
+//            Programmer programmer = Programmer.builder()
+//                    .username("testivan@gmail.com")
+//                    .language(Language.C)
+//                    .company(company)
+//                    .build();
+//
+//            session.save(programmer);
+//
+//            Manager manager = Manager.builder()
+//                    .username("test5@mail.ru")
+//                    .projectName("rpl")
+//                    .company(company)
+//                    .build();
+//
+//            session.save(manager);
 
             session.flush();
 
-            var programmer1 = session.get(Programmer.class, 1L);
+//            var programmer1 = session.get(Programmer.class, 1L);
             var manager1 = session.get(User.class, 2L);
             System.out.println(company);
             session.getTransaction().commit();
@@ -126,25 +135,25 @@ class HibernateRunnerTest {
 
             session.save(company);
 
-            Programmer programmer = Programmer.builder()
-                    .username("testivan@gmail.com")
-                    .language(Language.C)
-                    .company(company)
-                    .build();
-
-            session.save(programmer);
-
-            Manager manager = Manager.builder()
-                    .username("test5@mail.ru")
-                    .projectName("rpl")
-                    .company(company)
-                    .build();
-
-            session.save(manager);
-
-            session.flush();
-
-            var programmer1 = session.get(Programmer.class, 1L);
+//            Programmer programmer = Programmer.builder()
+//                    .username("testivan@gmail.com")
+//                    .language(Language.C)
+//                    .company(company)
+//                    .build();
+//
+//            session.save(programmer);
+//
+//            Manager manager = Manager.builder()
+//                    .username("test5@mail.ru")
+//                    .projectName("rpl")
+//                    .company(company)
+//                    .build();
+//
+//            session.save(manager);
+//
+//            session.flush();
+//
+//            var programmer1 = session.get(Programmer.class, 1L);
             var manager1 = session.get(User.class, 2L);
             System.out.println(company);
             session.getTransaction().commit();
@@ -170,25 +179,25 @@ class HibernateRunnerTest {
 
             session.save(company);
 
-            Programmer programmer = Programmer.builder()
-                    .username("testivan@gmail.com")
-                    .language(Language.C)
-                    .company(company)
-                    .build();
-
-            session.save(programmer);
-
-            Manager manager = Manager.builder()
-                    .username("test5@mail.ru")
-                    .projectName("rpl")
-                    .company(company)
-                    .build();
-
-            session.save(manager);
-
-            session.flush();
-
-            var programmer1 = session.get(Programmer.class, 1L);
+//            Programmer programmer = Programmer.builder()
+//                    .username("testivan@gmail.com")
+//                    .language(Language.C)
+//                    .company(company)
+//                    .build();
+//
+//            session.save(programmer);
+//
+//            Manager manager = Manager.builder()
+//                    .username("test5@mail.ru")
+//                    .projectName("rpl")
+//                    .company(company)
+//                    .build();
+//
+//            session.save(manager);
+//
+//            session.flush();
+//
+//            var programmer1 = session.get(Programmer.class, 1L);
             var manager1 = session.get(User.class, 2L);
             System.out.println(company);
             session.getTransaction().commit();

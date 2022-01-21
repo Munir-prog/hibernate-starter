@@ -35,6 +35,8 @@ dependencies {
 //    testImplementation 'com.h2database:h2:2.0.206'
     testImplementation 'org.testcontainers:postgresql:1.16.2'
 
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+
 }
 
 wrapper {

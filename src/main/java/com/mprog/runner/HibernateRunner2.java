@@ -47,7 +47,7 @@ public class HibernateRunner2 {
                 var personalInfo = PersonalInfo.builder()
                         .lastname("Testov")
                         .firstName("Test")
-                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
+//                        .birthday(new Birthday(LocalDate.of(2001, 11, 6)))
                         .build();
 //                user.setLastname("Petrov");
                 //                session2.delete(user);

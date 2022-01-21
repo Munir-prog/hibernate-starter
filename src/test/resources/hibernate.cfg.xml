@@ -16,7 +16,8 @@
         <mapping class="com.mprog.entity.Profile"/>
         <mapping class="com.mprog.entity.Chat"/>
         <mapping class="com.mprog.entity.UserChat"/>
-        <mapping class="com.mprog.entity.Programmer"/>
-        <mapping class="com.mprog.entity.Manager"/>
+        <mapping class="com.mprog.entity.Payment"/>
+<!--        <mapping class="com.mprog.entity.Programmer"/>-->
+<!--        <mapping class="com.mprog.entity.Manager"/>-->
     </session-factory>
 </hibernate-configuration>
