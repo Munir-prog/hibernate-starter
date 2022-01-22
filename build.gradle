@@ -15,11 +15,12 @@ java {
 }
 
 dependencies {
-    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.1.Final'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.3.Final'
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '42.3.1'
     implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.14.0'
     implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.32'
 
+    annotationProcessor 'org.hibernate:hibernate-jpamodelgen:5.6.3.Final'
 
     //lombok
     compileOnly 'org.projectlombok:lombok:1.18.22'
@@ -30,8 +31,8 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 //    testImplementation 'com.h2database:h2:2.0.206'
     testImplementation 'org.testcontainers:postgresql:1.16.2'
 
