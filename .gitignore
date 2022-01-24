@@ -8,3 +8,4 @@ gradle
 .gitattributes
 gradlew
 gradlew.bat
+*.log
