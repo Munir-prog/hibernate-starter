@@ -3,7 +3,11 @@ package com.mprog.dao;
 import com.mprog.dto.CompanyDto;
 import com.mprog.dto.PaymentFilter;
 import com.mprog.entity.*;
+import com.mprog.functions.MyFunction;
 import com.querydsl.core.Tuple;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.Visitor;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQuery;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -12,6 +16,7 @@ import org.hibernate.Session;
 import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import static com.mprog.entity.QCompany.company;
 import static com.mprog.entity.QPayment.payment;
@@ -208,13 +213,21 @@ public class UserDao {
 //                );
 //        return session.createQuery(criteria)
 //                .uniqueResult();
-        QPredicate.builder()
+        Predicate predicate = QPredicate.builder()
+//                .add(filter.getFirstName(), (value) -> user.personalInfo.firstName.eq(value))
+                .add(filter.getFirstName(), user.personalInfo.firstName::eq)
+                .addP(filter.getLastName(), new MyFunction<String, Predicate>() {
+                    @Override
+                    public Predicate apply(String s) {
+                        return user.personalInfo.lastname.eq(s);
+                    }
+                }).buildAnd();
 
         return new JPAQuery<Double>(session)
                 .select(payment.amount.avg())
                 .from(payment)
                 .join(payment.receiver, user)
-                .where(user.personalInfo.firstName.eq(firstName), user.personalInfo.lastname.eq(lastName))
+                .where(predicate)
                 .fetchOne();
     }
 
