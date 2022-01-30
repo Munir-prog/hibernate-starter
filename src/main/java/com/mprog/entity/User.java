@@ -34,6 +34,19 @@ import static javax.xml.stream.XMLStreamConstants.SPACE;
 
 //import static com.mprog.util.StringUtils.SPACE;
 
+
+@FetchProfile(name = "withCompanyAndPayments", fetchOverrides = {
+        @FetchProfile.FetchOverride(
+                entity = User.class,
+                association = "company",
+                mode = FetchMode.JOIN
+        ),
+        @FetchProfile.FetchOverride(
+                entity = User.class,
+                association = "payments",
+                mode = FetchMode.JOIN
+        )
+})
 @NamedQuery(name = "findUserByName", query = "select u from User u " +
         "left join u.company c " +
         "where u.personalInfo.firstName = :firstname and c.name = :companyName " +

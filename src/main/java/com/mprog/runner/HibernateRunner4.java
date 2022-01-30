@@ -1,6 +1,7 @@
 package com.mprog.runner;
 
 
+import com.mprog.entity.Company;
 import com.mprog.entity.User;
 import com.mprog.util.HibernateUtil;
 import org.hibernate.Session;
@@ -16,14 +17,18 @@ public class HibernateRunner4 {
              Session session = sessionFactory.openSession()) {
 
             session.beginTransaction();
+            session.enableFetchProfile("withCompanyAndPayments");
 
-//            User user = session.get(User.class, 1L);
 
-            List<User> users = session.createQuery("select u from User u " +
-                    "join fetch u.payments where 1 = 1", User.class).list();
-            users.forEach(user -> System.out.println(user.getPayments()));
-//            users.forEach(user -> System.out.println(user.getUserChats()));
-            users.forEach(user -> System.out.println(user.getCompany().getName()));
+
+            User user = session.get(User.class, 1L);
+            Company company = user.getCompany();
+            System.out.println(company.getName());
+//            List<User> users = session.createQuery("select u from User u " +
+//                    "join fetch u.payments where 1 = 1", User.class).list();
+//            users.forEach(user -> System.out.println(user.getPayments()));
+////            users.forEach(user -> System.out.println(user.getUserChats()));
+//            users.forEach(user -> System.out.println(user.getCompany().getName()));
 
             session.getTransaction().commit();
         }
