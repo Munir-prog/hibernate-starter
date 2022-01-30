@@ -161,13 +161,14 @@ public class UserDao {
 //        Root<Payment> payment = criteria.from(Payment.class);
 ////        joining
 //        Join<Payment, User> receiver = payment.join(Payment_.receiver);
+//        payment.fetch(Payment_.receiver);
 ////        joining
 //        Join<User, Company> company = receiver.join(User_.company);
 ////        query
 //        criteria.select(payment)
 //                .where(cb.equal(company.get(Company_.name), companyName))
 //                .orderBy(
-//                        cb.asc(receiver.get(personalInfo).get(firstName)),
+//                        cb.asc(receiver.get(User_.personalInfo).get(PersonalInfo_.firstName)),
 //                        cb.asc(payment.get(Payment_.amount))
 //                );
 //        return session.createQuery(criteria)
@@ -175,7 +176,7 @@ public class UserDao {
         return new JPAQuery<Payment>(session)
                 .select(payment)
                 .from(payment)
-                .join(payment.receiver, user)
+                .join(payment.receiver, user).fetchJoin()
                 .join(user.company, company)
                 .where(company.name.eq(companyName))
                 .orderBy(user.personalInfo.firstName.asc(), payment.amount.asc())
