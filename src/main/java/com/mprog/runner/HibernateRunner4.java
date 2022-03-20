@@ -30,14 +30,19 @@ public class HibernateRunner4 {
             session.beginTransaction();
             session1.beginTransaction();
 
-            Payment payment = session.find(Payment.class, 1L);
+            session.createQuery("select u from Payment u", Payment.class)
+                    .setLockMode(LockModeType.PESSIMISTIC_FORCE_INCREMENT)
+                    .setHint("javax.persistence.lock.timeout", 5000)
+                    .list();
+
+            Payment payment = session.find(Payment.class, 1L, LockModeType.PESSIMISTIC_READ);
             payment.setAmount(payment.getAmount() + 10);
 
-//            Payment theSamePayment = session1.find(Payment.class, 1L);
-//            theSamePayment.setAmount(payment.getAmount() + 20);
+            Payment theSamePayment = session1.find(Payment.class, 1L);
+            theSamePayment.setAmount(payment.getAmount() + 20);
 
-            session.getTransaction().commit();
             session1.getTransaction().commit();
+            session.getTransaction().commit();
         }
     }
 
