@@ -23,6 +23,31 @@ public class HibernateRunner4 {
 
     @Transactional
     public static void main(String[] args) {
+//        pessimisticAndOptimisticLocksLesson();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            TestDataImporter.importData(sessionFactory);
+//            session.setDefaultReadOnly(true);
+//            session.setReadOnly();
+            session.beginTransaction();
+
+            session.createNativeQuery("SET TRANSACTION READ ONLY;").executeUpdate();
+//            List<Payment> payments = session.createQuery("select u from Payment u", Payment.class)
+//                    .setLockMode(LockModeType.PESSIMISTIC_FORCE_INCREMENT)
+//                    .setHint("javax.persistence.lock.timeout", 5000)
+//                    .setReadOnly(true)
+//                    .setHint(QueryHints.HINT_READONLY, true)
+//                    .list();
+
+            Payment payment = session.find(Payment.class, 1L);
+            payment.setAmount(payment.getAmount() + 10);
+
+
+            session.getTransaction().commit();
+        }
+    }
+
+    private static void pessimisticAndOptimisticLocksLesson() {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession();
              Session session1 = sessionFactory.openSession()) {
