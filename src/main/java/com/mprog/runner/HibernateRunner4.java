@@ -1,10 +1,7 @@
 package com.mprog.runner;
 
 
-import com.mprog.entity.Company;
-import com.mprog.entity.Payment;
-import com.mprog.entity.User;
-import com.mprog.entity.UserChat;
+import com.mprog.entity.*;
 import com.mprog.util.HibernateUtil;
 import com.mprog.util.TestDataImporter;
 import org.hibernate.Session;
@@ -27,23 +24,35 @@ public class HibernateRunner4 {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
             TestDataImporter.importData(sessionFactory);
-//            session.setDefaultReadOnly(true);
-//            session.setReadOnly();
-            session.beginTransaction();
 
-            session.createNativeQuery("SET TRANSACTION READ ONLY;").executeUpdate();
-//            List<Payment> payments = session.createQuery("select u from Payment u", Payment.class)
+//            session.doWork(connection -> connection.setAutoCommit(false));
+            //            session.setDefaultReadOnly(true);
+//            session.setReadOnly();
+//            session.beginTransaction();
+
+            Profile profile = Profile.builder()
+                    .user(session.find(User.class, 1L))
+                    .language("ru")
+                    .street("Kolas 28")
+                    .build();
+
+            session.save(profile);
+
+
+//            session.createNativeQuery("SET TRANSACTION READ ONLY;").executeUpdate();
+            List<Payment> payments = session.createQuery("select u from Payment u", Payment.class)
 //                    .setLockMode(LockModeType.PESSIMISTIC_FORCE_INCREMENT)
 //                    .setHint("javax.persistence.lock.timeout", 5000)
 //                    .setReadOnly(true)
 //                    .setHint(QueryHints.HINT_READONLY, true)
-//                    .list();
+                    .list();
 
             Payment payment = session.find(Payment.class, 1L);
             payment.setAmount(payment.getAmount() + 10);
+//            session.save(payment);
+//            session.flush();
 
-
-            session.getTransaction().commit();
+//            session.getTransaction().commit();
         }
     }
 
