@@ -28,29 +28,30 @@ public class HibernateRunner4 {
             TestDataImporter.importData(sessionFactory);
 
             session.beginTransaction();
-            List<User> users = session.createQuery("select u from User u", User.class).list();
+//            List<User> users = session.createQuery("select u from User u", User.class).list();
+//
+//            Chat chat = Chat.builder()
+//                    .name("dmdev")
+//                    .build();
+//
+//            List<UserChat> userChats = new ArrayList<>();
+//
+//            for (User user : users) {
+//                UserChat userChat = UserChat.builder()
+//                        .chat(chat)
+//                        .user(user)
+//                        .build();
+//                userChats.add(userChat);
+//                session.save(userChat);
+//            }
+//
+//            chat.setUserChats(userChats);
+//            session.save(chat);
 
-            Chat chat = Chat.builder()
-                    .name("dmdev")
-                    .build();
 
-            List<UserChat> userChats = new ArrayList<>();
-
-            for (User user : users) {
-                UserChat userChat = UserChat.builder()
-                        .chat(chat)
-                        .user(user)
-                        .build();
-                userChats.add(userChat);
-                session.save(userChat);
-            }
-
-            chat.setUserChats(userChats);
-            session.save(chat);
-
-//            Payment payment = session.find(Payment.class, 1L);
-//            payment.setAmount(10);
-        session.getTransaction().commit();
+            var payment = session.find(Payment.class, 1L);
+            payment.setAmount(payment.getAmount() + 10);
+            session.getTransaction().commit();
 
         }
     }

@@ -8389,3 +8389,299 @@ https://vladmihalcea.com/hypersistence-optimizer/
 [2022-03-26 18:20:51,359] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@51da32e5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 [2022-03-26 18:20:51,458] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 [2022-03-26 18:20:51,825] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:06:25,660] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:06:26,817] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:06:28,952] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:06:29,566] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:06:29,606] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:06:29,610] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:06:29,614] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:06:29,624] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:06:30,097] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:06:34,490] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:06:34,655] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@53747c4a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:06:34,706] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:06:34,708] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:06:34,737] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:06:34,738] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:06:34,758] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:06:34,792] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:06:34,813] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:06:34,822] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:06:34,828] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:06:34,832] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "audit" does not exist, skipping
+[2022-03-27 12:06:34,881] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235c997d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:06:35,069] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:06:36,809] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:07:11,259] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:07:11,737] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:07:12,529] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:07:12,710] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:07:12,719] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:07:12,720] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:07:12,720] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:07:12,724] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:07:12,863] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:07:14,197] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:07:14,234] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64763e49] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:07:14,255] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:07:14,255] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:07:14,259] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:07:14,259] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:07:14,261] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:07:14,263] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:07:14,268] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:07:14,268] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:07:14,296] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2047981] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:07:14,412] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:07:14,767] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:11:52,761] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:11:53,059] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:11:53,743] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:11:53,874] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:11:53,882] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:11:53,883] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:11:53,884] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:11:53,887] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:11:54,008] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:11:55,285] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:11:55,319] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64763e49] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:11:55,343] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:11:55,344] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:11:55,354] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:11:55,355] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:11:55,357] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:11:55,359] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:11:55,364] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:11:55,365] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:11:55,396] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2047981] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:11:55,544] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:11:55,927] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:12:38,281] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:12:38,548] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:12:39,154] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:12:39,317] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:12:39,325] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:12:39,326] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:12:39,327] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:12:39,331] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:12:39,474] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:12:58,433] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:12:58,470] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@69cd7630] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:12:58,490] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:12:58,491] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:12:58,497] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:12:58,498] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:12:58,500] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:12:58,502] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:12:58,508] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:12:58,509] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:12:58,539] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6f31df32] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:12:58,647] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:14:46,703] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:18:51,410] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:18:51,750] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:18:52,606] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:18:52,834] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:18:52,845] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:18:52,847] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:18:52,849] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:18:52,854] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:18:53,057] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:18:54,618] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:18:54,659] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@23468512] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:18:54,674] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:18:54,674] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:18:54,680] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:18:54,680] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:18:54,698] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:18:54,700] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:18:54,705] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:18:54,706] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:18:54,739] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2ad99cf3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:18:54,892] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:18:55,623] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:19:28,018] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:19:28,307] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:19:28,886] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:19:29,030] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:19:29,038] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:19:29,039] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:19:29,039] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:19:29,043] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:19:29,192] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:19:30,522] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:19:30,557] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@23468512] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:19:30,584] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:19:30,585] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:19:30,594] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:19:30,595] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:19:30,597] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:19:30,599] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:19:30,609] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:19:30,609] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:19:30,647] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2ad99cf3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:19:30,797] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:24:34,795] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:25:45,851] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.3.Final
+[2022-03-27 12:25:46,092] INFO [Hibernate Types: 298] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[2022-03-27 12:25:46,706] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-27 12:25:46,887] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2022-03-27 12:25:46,896] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/hib_learn]
+[2022-03-27 12:25:46,897] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=postgres}
+[2022-03-27 12:25:46,897] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[2022-03-27 12:25:46,901] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2022-03-27 12:25:47,034] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2022-03-27 12:25:48,208] WARN [org.hibernate.metamodel.internal.MetadataContext: 526] HHH015011: Unable to locate static metamodel field : com.mprog.entity.Audit_#entityId; this may or may not indicate a problem with the static metamodel
+[2022-03-27 12:25:48,239] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64763e49] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:25:48,259] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:25:48,259] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] drop cascades to 3 other objects
+[2022-03-27 12:25:48,264] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:25:48,265] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk6ekr1r2boj1fg6vt57y4a54al" of relation "payment" does not exist, skipping
+[2022-03-27 12:25:48,267] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:25:48,268] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk1da3iuv2pgbruhtujylkbmv14" of relation "profile" does not exist, skipping
+[2022-03-27 12:25:48,272] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[2022-03-27 12:25:48,273] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] constraint "fk4n5ew9rhowx26b46nwirrcfdi" of relation "users_chat" does not exist, skipping
+[2022-03-27 12:25:48,299] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2047981] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2022-03-27 12:25:48,389] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-27 12:25:48,704] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/hib_learn]

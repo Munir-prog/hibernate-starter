@@ -11,7 +11,7 @@ import java.util.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = "users")
+@ToString(exclude = {"users", "locales"})
 @EqualsAndHashCode(of = "name")
 @Builder
 @BatchSize(size = 3)
