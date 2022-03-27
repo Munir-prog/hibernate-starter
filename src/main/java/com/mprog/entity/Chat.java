@@ -25,6 +25,8 @@ public class Chat {
     @Column(nullable = false, unique = true)
     private String name;
 
+    @Builder.Default
+    private Integer count = 0;
 
     @Builder.Default
     @OneToMany(mappedBy = "chat")

@@ -1,6 +1,7 @@
 package com.mprog.util;
 
 import com.mprog.converter.BirthdayConverter;
+import com.mprog.entity.Audit;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.experimental.UtilityClass;
 import org.hibernate.SessionFactory;
@@ -23,6 +24,7 @@ public class HibernateUtil {
 //        configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
         configuration.addAttributeConverter(new BirthdayConverter());
 //        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Audit.class);
         configuration.registerTypeOverride(new JsonBinaryType());
         return configuration;
     }

@@ -13,6 +13,7 @@ import org.hibernate.jpa.QueryHints;
 
 import javax.persistence.LockModeType;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,40 @@ public class HibernateRunner4 {
     @Transactional
     public static void main(String[] args) {
 //        pessimisticAndOptimisticLocksLesson();
+//        transactionsPart();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            TestDataImporter.importData(sessionFactory);
+
+            session.beginTransaction();
+            List<User> users = session.createQuery("select u from User u", User.class).list();
+
+            Chat chat = Chat.builder()
+                    .name("dmdev")
+                    .build();
+
+            List<UserChat> userChats = new ArrayList<>();
+
+            for (User user : users) {
+                UserChat userChat = UserChat.builder()
+                        .chat(chat)
+                        .user(user)
+                        .build();
+                userChats.add(userChat);
+                session.save(userChat);
+            }
+
+            chat.setUserChats(userChats);
+            session.save(chat);
+
+//            Payment payment = session.find(Payment.class, 1L);
+//            payment.setAmount(10);
+        session.getTransaction().commit();
+
+        }
+    }
+
+    private static void transactionsPart() {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
             TestDataImporter.importData(sessionFactory);
