@@ -2,6 +2,7 @@ package com.mprog.util;
 
 import com.mprog.converter.BirthdayConverter;
 import com.mprog.entity.Audit;
+import com.mprog.entity.Revision;
 import com.mprog.listener.AuditTableListener;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.experimental.UtilityClass;
@@ -39,6 +40,7 @@ public class HibernateUtil {
         configuration.addAttributeConverter(new BirthdayConverter());
 //        configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Audit.class);
+        configuration.addAnnotatedClass(Revision.class);
         configuration.registerTypeOverride(new JsonBinaryType());
         return configuration;
     }

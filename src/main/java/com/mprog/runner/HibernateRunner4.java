@@ -9,12 +9,15 @@ import com.mprog.util.HibernateUtil;
 import com.mprog.util.TestDataImporter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.envers.AuditReader;
+import org.hibernate.envers.AuditReaderFactory;
 import org.hibernate.graph.GraphSemantic;
 import org.hibernate.graph.RootGraph;
 import org.hibernate.graph.SubGraph;
 
 import javax.persistence.LockModeType;
 import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -24,14 +27,26 @@ public class HibernateRunner4 {
     public static void main(String[] args) {
 //        pessimisticAndOptimisticLocksLesson();
 //        transactionsPart();
-        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
-             Session session = sessionFactory.openSession()) {
-            TestDataImporter.importData(sessionFactory);
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
+//            TestDataImporter.importData(sessionFactory);
 
-            session.beginTransaction();
-            var payment = session.find(Payment.class, 1L);
-            payment.setAmount(payment.getAmount() + 10);
-            session.getTransaction().commit();
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+                var payment = session.find(Payment.class, 1L);
+                payment.setAmount(payment.getAmount() + 10);
+                session.getTransaction().commit();
+            }
+
+            try (Session session2 = sessionFactory.openSession()) {
+                session2.beginTransaction();
+
+                AuditReader auditReader = AuditReaderFactory.get(session2);
+//                auditReader.find(Payment.class, 1L, 1L)
+                Payment oldPayment = auditReader.find(Payment.class, 1L, new Date(1648935229572L));
+                System.out.println();
+
+                session2.getTransaction().commit();
+            }
 
             //            List<User> users = session.createQuery("select u from User u", User.class).list();
 //
