@@ -3,6 +3,8 @@ package com.mprog.entity;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.SortNatural;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
 import java.util.*;
@@ -15,6 +17,7 @@ import java.util.*;
 @EqualsAndHashCode(of = "name")
 @Builder
 @BatchSize(size = 3)
+@Audited
 public class Company {
 
     @Id
@@ -33,6 +36,7 @@ public class Company {
 //    @OrderColumn
     @MapKey(name = "username")
     @SortNatural
+    @NotAudited
     private Map<String, User> users = new TreeMap<>();
 
 
@@ -44,6 +48,7 @@ public class Company {
     )
     @MapKeyColumn(name = "lang")
     @Column(name = "description")
+    @NotAudited
     private Map<String, String> locales = new HashMap<>();
 
 

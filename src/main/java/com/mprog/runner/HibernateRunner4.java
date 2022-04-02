@@ -1,7 +1,10 @@
 package com.mprog.runner;
 
 
-import com.mprog.entity.*;
+import com.mprog.entity.Payment;
+import com.mprog.entity.Profile;
+import com.mprog.entity.User;
+import com.mprog.entity.UserChat;
 import com.mprog.util.HibernateUtil;
 import com.mprog.util.TestDataImporter;
 import org.hibernate.Session;
@@ -9,11 +12,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.graph.GraphSemantic;
 import org.hibernate.graph.RootGraph;
 import org.hibernate.graph.SubGraph;
-import org.hibernate.jpa.QueryHints;
 
 import javax.persistence.LockModeType;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,11 @@ public class HibernateRunner4 {
             TestDataImporter.importData(sessionFactory);
 
             session.beginTransaction();
-//            List<User> users = session.createQuery("select u from User u", User.class).list();
+            var payment = session.find(Payment.class, 1L);
+            payment.setAmount(payment.getAmount() + 10);
+            session.getTransaction().commit();
+
+            //            List<User> users = session.createQuery("select u from User u", User.class).list();
 //
 //            Chat chat = Chat.builder()
 //                    .name("dmdev")
@@ -47,12 +52,6 @@ public class HibernateRunner4 {
 //
 //            chat.setUserChats(userChats);
 //            session.save(chat);
-
-
-            var payment = session.find(Payment.class, 1L);
-            payment.setAmount(payment.getAmount() + 10);
-            session.getTransaction().commit();
-
         }
     }
 
