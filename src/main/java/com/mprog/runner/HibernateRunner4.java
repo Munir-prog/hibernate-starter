@@ -27,6 +27,18 @@ public class HibernateRunner4 {
     public static void main(String[] args) {
 //        pessimisticAndOptimisticLocksLesson();
 //        transactionsPart();
+//        envers();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            var payment = session.find(Payment.class, 1L);
+            payment.setAmount(payment.getAmount() + 10);
+            session.getTransaction().commit();
+        }
+
+    }
+
+    private static void envers() {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
 //            TestDataImporter.importData(sessionFactory);
 
@@ -69,7 +81,6 @@ public class HibernateRunner4 {
 //            session.save(chat);
         }
     }
-
     private static void transactionsPart() {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
