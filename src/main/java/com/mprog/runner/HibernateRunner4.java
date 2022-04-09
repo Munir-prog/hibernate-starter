@@ -1,6 +1,7 @@
 package com.mprog.runner;
 
 
+import com.mprog.dao.PaymentRepository;
 import com.mprog.entity.Payment;
 import com.mprog.entity.Profile;
 import com.mprog.entity.User;
@@ -29,6 +30,19 @@ public class HibernateRunner4 {
 //        pessimisticAndOptimisticLocksLesson();
 //        transactionsPart();
 //        envers();
+//        cacheLessons();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+
+                PaymentRepository paymentRepository = new PaymentRepository(sessionFactory);
+                paymentRepository.findById(1L).ifPresent(System.out::println);
+                session.getTransaction().commit();
+            }
+        }
+    }
+
+    private static void cacheLessons() {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
 
             User user = null;
@@ -65,7 +79,6 @@ public class HibernateRunner4 {
                 session.getTransaction().commit();
             }
         }
-
     }
 
     private static void envers() {
