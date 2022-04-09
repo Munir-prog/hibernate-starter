@@ -35,6 +35,8 @@ public class HibernateRunner4 {
                 session.beginTransaction();
 
                 user = session.find(User.class, 1L);
+                user.getCompany().getName();
+                user.getUserChats().size();
                 var user1 = session.find(User.class, 1L);
 
                 session.getTransaction().commit();
@@ -43,8 +45,9 @@ public class HibernateRunner4 {
             try (Session session = sessionFactory.openSession()) {
                 session.beginTransaction();
 
-                var user1 = session.find(User.class, 1L);
-
+                var user2 = session.find(User.class, 1L);
+                user2.getCompany().getName();
+                user2.getUserChats().size();
                 session.getTransaction().commit();
             }
         }
