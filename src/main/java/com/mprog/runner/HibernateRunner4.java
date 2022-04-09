@@ -28,12 +28,25 @@ public class HibernateRunner4 {
 //        pessimisticAndOptimisticLocksLesson();
 //        transactionsPart();
 //        envers();
-        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
-             Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            var payment = session.find(Payment.class, 1L);
-            payment.setAmount(payment.getAmount() + 10);
-            session.getTransaction().commit();
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
+
+            User user = null;
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+
+                user = session.find(User.class, 1L);
+                var user1 = session.find(User.class, 1L);
+
+                session.getTransaction().commit();
+            }
+
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+
+                var user1 = session.find(User.class, 1L);
+
+                session.getTransaction().commit();
+            }
         }
 
     }
