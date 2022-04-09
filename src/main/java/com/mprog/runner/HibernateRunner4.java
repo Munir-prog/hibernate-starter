@@ -19,6 +19,9 @@ import org.hibernate.jpa.QueryHints;
 
 import javax.persistence.LockModeType;
 import javax.transaction.Transactional;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -32,13 +35,17 @@ public class HibernateRunner4 {
 //        envers();
 //        cacheLessons();
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
-            try (Session session = sessionFactory.openSession()) {
-                session.beginTransaction();
 
-                PaymentRepository paymentRepository = new PaymentRepository(sessionFactory);
-                paymentRepository.findById(1L).ifPresent(System.out::println);
-                session.getTransaction().commit();
-            }
+            Session session = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
+                    (proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(), args1));
+
+            session.beginTransaction();
+
+            PaymentRepository paymentRepository = new PaymentRepository(session);
+            paymentRepository.findById(1L).ifPresent(System.out::println);
+
+            session.getTransaction().commit();
+
         }
     }
 
@@ -124,6 +131,7 @@ public class HibernateRunner4 {
 //            session.save(chat);
         }
     }
+
     private static void transactionsPart() {
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
