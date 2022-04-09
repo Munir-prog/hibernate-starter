@@ -14,6 +14,7 @@ import org.hibernate.envers.AuditReaderFactory;
 import org.hibernate.graph.GraphSemantic;
 import org.hibernate.graph.RootGraph;
 import org.hibernate.graph.SubGraph;
+import org.hibernate.jpa.QueryHints;
 
 import javax.persistence.LockModeType;
 import javax.transaction.Transactional;
@@ -39,6 +40,12 @@ public class HibernateRunner4 {
                 user.getUserChats().size();
                 var user1 = session.find(User.class, 1L);
 
+                List<Payment> payments = session.createQuery("select m from Payment m where m.receiver.id = :userId", Payment.class)
+                        .setParameter("userId", user.getId())
+                        .setCacheable(true)
+//                        .setCacheRegion("queries")
+//                        .setHint(QueryHints.HINT_CACHEABLE, true)
+                        .getResultList();
                 session.getTransaction().commit();
             }
 
@@ -48,6 +55,13 @@ public class HibernateRunner4 {
                 var user2 = session.find(User.class, 1L);
                 user2.getCompany().getName();
                 user2.getUserChats().size();
+
+                List<Payment> payments = session.createQuery("select m from Payment m where m.receiver.id = :userId", Payment.class)
+                        .setParameter("userId", user2.getId())
+                        .setCacheable(true)
+//                        .setCacheRegion("queries")
+//                        .setHint(QueryHints.HINT_CACHEABLE, true)
+                        .getResultList();
                 session.getTransaction().commit();
             }
         }
