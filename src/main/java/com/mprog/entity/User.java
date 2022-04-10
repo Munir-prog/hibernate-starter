@@ -27,6 +27,12 @@ import static javax.xml.stream.XMLStreamConstants.SPACE;
 //import static com.mprog.util.StringUtils.SPACE;
 
 @NamedEntityGraph(
+        name = "withCompany",
+        attributeNodes = {
+                @NamedAttributeNode("company")
+        }
+)
+@NamedEntityGraph(
         name = "withCompanyAndChat",
         attributeNodes = {
                 @NamedAttributeNode("company"),

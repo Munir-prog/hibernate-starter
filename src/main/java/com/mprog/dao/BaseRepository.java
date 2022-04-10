@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -37,8 +38,8 @@ public abstract class BaseRepository<K extends Serializable, E extends BaseEntit
     }
 
     @Override
-    public Optional<E> findById(K id) {
-        return Optional.ofNullable(entityManager.find(clazz, id));
+    public Optional<E> findById(K id, Map<String, Object> properites) {
+        return Optional.ofNullable(entityManager.find(clazz, id, properites));
     }
 
     @Override
