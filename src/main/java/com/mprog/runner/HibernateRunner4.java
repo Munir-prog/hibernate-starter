@@ -1,17 +1,22 @@
 package com.mprog.runner;
 
 
+import com.mprog.dao.CompanyRepository;
 import com.mprog.dao.PaymentRepository;
 import com.mprog.dao.UserRepository;
-import com.mprog.entity.Payment;
-import com.mprog.entity.Profile;
-import com.mprog.entity.User;
-import com.mprog.entity.UserChat;
+import com.mprog.dto.UserCreateDto;
+import com.mprog.entity.*;
+import com.mprog.interceptor.TransactionInterceptor;
 import com.mprog.mapper.CompanyReadMapper;
+import com.mprog.mapper.UserCreateMapper;
 import com.mprog.mapper.UserReadMapper;
 import com.mprog.service.UserService;
 import com.mprog.util.HibernateUtil;
 import com.mprog.util.TestDataImporter;
+import net.bytebuddy.ByteBuddy;
+import net.bytebuddy.implementation.MethodDelegation;
+import net.bytebuddy.matcher.ElementMatcher;
+import net.bytebuddy.matcher.ElementMatchers;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.envers.AuditReader;
@@ -24,8 +29,10 @@ import org.hibernate.jpa.QueryHints;
 import javax.persistence.LockModeType;
 import javax.transaction.Transactional;
 import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +40,7 @@ import java.util.Map;
 public class HibernateRunner4 {
 
     @Transactional
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 //        pessimisticAndOptimisticLocksLesson();
 //        transactionsPart();
 //        envers();
@@ -43,17 +50,41 @@ public class HibernateRunner4 {
             Session session = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
                     (proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(), args1));
 
-            session.beginTransaction();
 
             CompanyReadMapper companyReadMapper = new CompanyReadMapper();
+            CompanyRepository companyRepository = new CompanyRepository(session);
             UserReadMapper userReadMapper = new UserReadMapper(companyReadMapper);
-
+            UserCreateMapper userCreateMapper = new UserCreateMapper(companyRepository);
             UserRepository userRepository = new UserRepository(session);
-            UserService userService = new UserService(userRepository, userReadMapper);
+//            UserService userService = new UserService(userRepository, userReadMapper, userCreateMapper);
+            TransactionInterceptor transactionInterceptor = new TransactionInterceptor(sessionFactory);
+
+            UserService userService = new ByteBuddy()
+                    .subclass(UserService.class)
+                    .method(ElementMatchers.any())
+                    .intercept(MethodDelegation.to(transactionInterceptor))
+                    .make()
+                    .load(UserService.class.getClassLoader())
+                    .getLoaded()
+                    .getDeclaredConstructor(UserRepository.class, UserReadMapper.class, UserCreateMapper.class)
+                    .newInstance(userRepository, userReadMapper, userCreateMapper);
 
             userService.findById(1L).ifPresent(System.out::println);
 
-            session.getTransaction().commit();
+            UserCreateDto userCreateDto = new UserCreateDto(
+                    PersonalInfo.builder()
+                            .firstName("Liza")
+                            .lastname("Stepanova")
+                            .birthday(LocalDate.now())
+                            .build(),
+                    "liza2@gmail.com",
+                    null,
+                    Role.USER,
+                    1
+            );
+            userService.create(userCreateDto);
+
+
 
         }
     }
