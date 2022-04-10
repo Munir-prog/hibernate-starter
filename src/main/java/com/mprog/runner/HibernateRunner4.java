@@ -2,10 +2,14 @@ package com.mprog.runner;
 
 
 import com.mprog.dao.PaymentRepository;
+import com.mprog.dao.UserRepository;
 import com.mprog.entity.Payment;
 import com.mprog.entity.Profile;
 import com.mprog.entity.User;
 import com.mprog.entity.UserChat;
+import com.mprog.mapper.CompanyReadMapper;
+import com.mprog.mapper.UserReadMapper;
+import com.mprog.service.UserService;
 import com.mprog.util.HibernateUtil;
 import com.mprog.util.TestDataImporter;
 import org.hibernate.Session;
@@ -41,8 +45,13 @@ public class HibernateRunner4 {
 
             session.beginTransaction();
 
-            PaymentRepository paymentRepository = new PaymentRepository(session);
-            paymentRepository.findById(1L).ifPresent(System.out::println);
+            CompanyReadMapper companyReadMapper = new CompanyReadMapper();
+            UserReadMapper userReadMapper = new UserReadMapper(companyReadMapper);
+
+            UserRepository userRepository = new UserRepository(session);
+            UserService userService = new UserService(userRepository, userReadMapper);
+
+            userService.findById(1L).ifPresent(System.out::println);
 
             session.getTransaction().commit();
 

@@ -1,10 +1,7 @@
 package com.mprog.dao;
 
 import com.mprog.entity.Payment;
-import com.mprog.entity.QPayment;
-import com.querydsl.core.types.Predicate;
 import com.querydsl.jpa.impl.JPAQuery;
-import org.hibernate.SessionFactory;
 
 import javax.persistence.EntityManager;
 import java.util.List;
