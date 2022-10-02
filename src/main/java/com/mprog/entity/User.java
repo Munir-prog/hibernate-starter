@@ -17,6 +17,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -75,9 +77,11 @@ public class User implements Comparable<User>, BaseEntity<Long> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Valid
     @AttributeOverride(name = "birthday", column = @Column(name = "birthday"))
     private PersonalInfo personalInfo;
 
+    @NotNull
     @Column(unique = true)
     private String username;
 

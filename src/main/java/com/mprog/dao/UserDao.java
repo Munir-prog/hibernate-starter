@@ -18,9 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+import static com.mprog.entity.PersonalInfo_.firstName;
 import static com.mprog.entity.QCompany.company;
 import static com.mprog.entity.QPayment.payment;
 import static com.mprog.entity.QUser.user;
+import static com.mprog.entity.User_.personalInfo;
 
 //import static com.mprog.entity.Company_.users;
 //import static com.mprog.entity.PersonalInfo_.birthday;
@@ -65,20 +67,20 @@ public class UserDao {
 
 
 //        Criteria API
-//        CriteriaBuilder cb = session.getCriteriaBuilder();
-//        CriteriaQuery<User> criteria = cb.createQuery(User.class);
-//        Root<User> user = criteria.from(User.class);
-//        criteria.select(user)
-//                .where(
-//                        cb.equal(user.get(personalInfo).get(firstName), firstNameArg)
-//                );
-//        return session.createQuery(criteria)
-//                .list();
-        return new JPAQuery<User>(session)
-                .select(user)
-                .from(user)
-                .where(user.personalInfo.firstName.eq(firstNameArg))
-                .fetch();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<User> criteria = cb.createQuery(User.class);
+        Root<User> user = criteria.from(User.class);
+        criteria.select(user)
+                .where(
+                        cb.equal(user.get(personalInfo).get(firstName), firstNameArg)
+                );
+        return session.createQuery(criteria)
+                .list();
+//        return new JPAQuery<User>(session)
+//                .select(user)
+//                .from(user)
+//                .where(user.personalInfo.firstName.eq(firstNameArg))
+//                .fetch();
     }
 
     /**

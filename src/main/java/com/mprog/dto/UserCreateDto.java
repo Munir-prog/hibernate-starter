@@ -2,10 +2,18 @@ package com.mprog.dto;
 
 import com.mprog.entity.PersonalInfo;
 import com.mprog.entity.Role;
+import com.mprog.validation.UpdateCheck;
 
-public record UserCreateDto(PersonalInfo personalInfo,
-                            String username,
-                            String info,
-                            Role role,
-                            Integer companyId) {
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+public record UserCreateDto(
+        @Valid
+        PersonalInfo personalInfo,
+        @NotNull
+        String username,
+        String info,
+        @NotNull(groups = UpdateCheck.class)
+        Role role,
+        Integer companyId) {
 }

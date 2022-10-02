@@ -5,8 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -28,6 +28,8 @@ public class PersonalInfo implements Serializable {
 
     //    @Convert(converter = BirthdayConverter.class)
 //    @Column(name = "birthday")
+
+    @NotNull
     private LocalDate birthday;
 //    private Birthday birthday;
 

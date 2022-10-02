@@ -32,6 +32,12 @@
         <appender-ref ref="console"/>
     </logger>
 
+    <logger name="org.hibernate.stat" >
+        <level value="debug"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+
     <logger name="com.mprog.entity" additivity="false">
         <level value="info"/>
         <appender-ref ref="console"/>

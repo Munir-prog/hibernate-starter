@@ -7,12 +7,15 @@ import com.mprog.entity.User;
 import com.mprog.mapper.Mapper;
 import com.mprog.mapper.UserCreateMapper;
 import com.mprog.mapper.UserReadMapper;
+import com.mprog.validation.UpdateCheck;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.graph.GraphSemantic;
 
 import javax.transaction.Transactional;
+import javax.validation.*;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 @RequiredArgsConstructor
 public class UserService {
@@ -24,6 +27,13 @@ public class UserService {
     @Transactional
     public Long create(UserCreateDto userCreateDto) {
         //validation
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+        Validator validator = validatorFactory.getValidator();
+        Set<ConstraintViolation<UserCreateDto>> validationResult = validator.validate(userCreateDto, UpdateCheck.class);
+        if (!validationResult.isEmpty()) {
+            throw new ConstraintViolationException(validationResult);
+        }
+
         //map
         User user = userCreateMapper.mapFrom(userCreateDto);
         return userRepository.save(user).getId();
